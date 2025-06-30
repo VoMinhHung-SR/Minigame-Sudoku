@@ -1,0 +1,38 @@
+#sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    gap: 1px;
+    margin: 20px auto;
+    width: fit-content;
+  }
+  
+  input {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+  }
+  h1 {
+    text-align: center; 
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+  }
+  
+  input:disabled {
+    background-color: #e0e0e0;
+    font-weight: bold;
+  }
+  #buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  button {
+    padding: 10px 20px;
+  }
