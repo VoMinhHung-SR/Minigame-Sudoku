@@ -1,17 +1,41 @@
 #sudoku-board {
+    text-align: center;
     display: grid;
-    grid-template-columns: repeat(9, 40px);
+    grid-template-columns: repeat(9, 50px);
     gap: 1px;
     margin: 20px auto;
     width: fit-content;
+    background-color: #333;
+    padding: 3px;
+    border-radius: 4px;
   }
   
   input {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
+    border: none;
+    background-color: white;
+    font-family: 'Arial', sans-serif;
+    font-weight: 500;
   }
+
+  input:nth-child(3n) {
+    border-right: 2px solid #333;
+  }
+  
+  input:nth-child(9n) {
+    border-right: none;
+  }
+  
+  /* Tạo đường viền cho hàng thứ 3, 6, 9 */
+  input:nth-child(n+19):nth-child(-n+27),
+  input:nth-child(n+46):nth-child(-n+54),
+  input:nth-child(n+73):nth-child(-n+81) {
+    border-bottom: 2px solid #333;
+  }
+  
   h1 {
     text-align: center; 
     font-size: 40px;
@@ -24,15 +48,84 @@
   }
   
   input:disabled {
-    background-color: #e0e0e0;
+    background-color: #f8f9fa;
     font-weight: bold;
+    color: #495057;
   }
+  
+  input:focus {
+    outline: 2px solid #007bff;
+    background-color: #e3f2fd;
+  }
+  
   #buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  button {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  button:nth-child(1) {
+    background-color: #2043e0;
+    color: white;
+  }
+  
+  button:nth-child(2) {
+    background-color: #64409e;
+    color: white;
+  }
+  
+  button:nth-child(3) {
+    background-color: #4d0892;
+    color: white;
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  #result {
+    text-align: center; 
+    font-size: 20px; 
+    font-weight: bold; 
+    margin: 20px 0; 
+    color: #333; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); 
+    font-family: 'Arial', sans-serif; 
+    text-transform: uppercase;
+    min-height: 30px;
+  }
+  .timer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
   }
-  button {
+  #timer {
+    text-align: center; 
+    font-size: 24px; 
+    font-weight: bold; 
+    margin: 10px 0; 
+    color: #333; 
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
     padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    margin: 10px auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
   }
