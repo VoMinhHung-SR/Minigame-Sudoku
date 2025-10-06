@@ -1,21 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sudoku Game</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <h1>Sudoku</h1>
-  <div class="timer-container">
-    <div id="timer">00:00</div>
-  </div>
-  <div id="sudoku-board" style="text-align: center;"></div>
-  <div id='result' style="text-align: center; font-size: 20px; font-weight: bold; margin-bottom: 20px; color: #333; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); font-family: 'Arial', sans-serif; text-transform: uppercase;"></div>
-  <div id="buttons">
-    <button onclick="checkSolution()">Check</button>
-    <button onclick="resetBoard()">Reset</button>
-    <button onclick="newGame()">New Game</button>
+  <div class="app-container">
+    <header class="game-header">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-th"></i>
+          <h1>Sudoku</h1>
+        </div>
+        <div class="theme-toggle">
+          <button id="theme-toggle" class="theme-btn">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-main">
+      <div class="game-info">
+        <div class="timer-container">
+          <div class="timer-label">
+            <i class="fas fa-clock"></i>
+            <span>Time</span>
+          </div>
+          <div id="timer">00:00</div>
+        </div>
+        <div class="difficulty-indicator">
+          <span class="difficulty-label">Difficulty:</span>
+          <span class="difficulty-value">Medium</span>
+        </div>
+      </div>
+
+      <div class="game-board-container">
+        <div id="sudoku-board"></div>
+      </div>
+
+      <div id="result" class="result-message"></div>
+
+      <div class="game-controls">
+        <button class="control-btn check-btn" onclick="checkSolution()">
+          <i class="fas fa-check"></i>
+          <span>Check</span>
+        </button>
+        <button class="control-btn reset-btn" onclick="resetBoard()">
+          <i class="fas fa-undo"></i>
+          <span>Reset</span>
+        </button>
+        <button class="control-btn new-game-btn" onclick="newGame()">
+          <i class="fas fa-plus"></i>
+          <span>New Game</span>
+        </button>
+      </div>
+
+      <div class="game-stats">
+        <div class="stat-item">
+          <i class="fas fa-trophy"></i>
+          <span class="stat-label">Games Won:</span>
+          <span class="stat-value" id="games-won">0</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-clock"></i>
+          <span class="stat-label">Best Time:</span>
+          <span class="stat-value" id="best-time">--:--</span>
+        </div>
+      </div>
+    </main>
   </div>
   <script src="script.js"></script>
 </body>
